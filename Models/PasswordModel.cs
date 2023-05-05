@@ -5,7 +5,7 @@ namespace Paradigmas.Models
     public class PasswordModel
     {
         [Required(ErrorMessage = "Por favor, informe o tamanho da senha")]
-        [Range(6, 20, ErrorMessage = "O tamanho da senha deve estar entre 6 e 20 caracteres")]
+        [Range(8, 20,ErrorMessage = "O tamanho da senha deve estar entre 6 e 20 caracteres")]
         public int Tamanho { get; set; }
 
         [Display(Name = "Incluir Letras Minúsculas")]

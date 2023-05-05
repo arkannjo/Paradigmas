@@ -28,6 +28,20 @@ namespace Paradigmas.Controllers
 
             return View(model);
         }
+public IActionResult GerarSenha()
+{
+    try
+    {
+        string senha = PasswordGenerator.GeneratePassword(8, true, true, true, true);
+        return View("SenhaGerada", senha);
     }
+    catch (ArgumentException ex)
+    {
+        ModelState.AddModelError(string.Empty, ex.Message);
+        return View("ErroAoGerarSenha");
+    }
+
+    }
+}
 }
 
